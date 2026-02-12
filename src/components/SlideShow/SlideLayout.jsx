@@ -10,10 +10,8 @@ export default function SideLayout({ children, preview }) {
       </div>
     </div>
   ) : (
-    <div className="h-full w-full  text-white">
-      <div className="h-full w-full flex items-center justify-center ">
-        {children}
-      </div>
+    <div className="h-full w-full  text-white  flex-row items-center justify-center">
+      {children}
     </div>
   );
 }

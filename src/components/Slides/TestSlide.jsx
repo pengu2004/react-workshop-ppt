@@ -1,14 +1,13 @@
 import SlideLayout from "../SlideShow/SlideLayout";
 
-export default function IntroSlide({ preview }) {
+export default function TestSlide({ preview }) {
   return (
     <SlideLayout preview={preview}>
-      <div className="h-screen bg-[url('/TNP_BG.png')] bg-cover bg-center bg-no-repeat">
-        {" "}
-        <div className="space-y-6 text-center">
-          <h1 className="text-6xl font-bold">React Workshop</h1>
+      <div className="h-full w-full bg-[url('/TNP_BG-2.jpg')] bg-cover bg-no-repeat flex items-center justify-start px-10">
+        <div className="text-center space-y-6">
+          <h1 className="text-6xl font-bold text-white">What is a SPA</h1>
           <p className="text-2xl text-gray-400">
-            From DOM Chaos to Declarative UI
+            SPA vs MPA
           </p>
         </div>
       </div>
