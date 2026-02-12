@@ -13,14 +13,12 @@ export default function Editor({ Present }) {
           <div className=" w-full   rounded-md flex flex-col items-start justify-center">
             {Array.from({ length: 9 }).map((_, index) => (
               <div key={index}>
-                <EmptySlide page={index + 1} />
+                <EmptySlide page={index + 1} preview={true} />
               </div>
             ))}
           </div>
         </div>
-        <h2 className="border col-span-3 rounded-md h-150 border-t ">
-          haeee
-        </h2>
+        <h2 className="border col-span-3 rounded-md h-150 ">haeee</h2>
       </div>
     </div>
   );

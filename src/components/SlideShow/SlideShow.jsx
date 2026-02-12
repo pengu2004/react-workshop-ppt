@@ -21,7 +21,7 @@ export default function SlideShow() {
 
   return (
     <div className="h-screen w-screen bg-black flex items-center justify-center py-16 px-5">
-      <div className="bg-gray-500 w-full h-full"></div>
+      <div className="bg-white w-full h-full"></div>
     </div>
   );
 }
