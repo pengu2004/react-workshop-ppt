@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import EmptySlide from "../EmptySlide";
+import IntroSlide from "../Slides/IntroSlide";
 
-export default function SlideEngine({ onExit }) {
-  const [index, setIndex] = useState(0);
-  const slides = [EmptySlide, EmptySlide];
-
+export default function SlideEngine({
+  onExit,
+  index,
+  Slides,
+  CurrentSlide,
+  changeSlide,
+}) {
   const [loading, setloading] = useState(true);
 
   useEffect(() => {
@@ -20,11 +24,11 @@ export default function SlideEngine({ onExit }) {
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowRight") {
-        setIndex((prev) => Math.min(prev + 1, slides.length - 1));
+        changeSlide(Math.min(index + 1, Slides.length - 1));
       }
 
       if (e.key === "ArrowLeft") {
-        setIndex((prev) => Math.max(prev - 1, 0));
+        changeSlide(Math.max(index - 1, 0));
       }
     };
 
@@ -41,9 +45,8 @@ export default function SlideEngine({ onExit }) {
       window.removeEventListener("keydown", handleKey);
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
     };
-  }, [onExit, slides.length]);
+  }, [onExit, Slides.length, changeSlide]);
 
-  const CurrentSlide = slides[index];
   if (loading) {
     return (
       <div className="h-screen w-screen bg-white text-black text-3xl flex justify-center items-center">
@@ -56,8 +59,8 @@ export default function SlideEngine({ onExit }) {
     <div className="h-screen w-screen bg-black text-white relative overflow-hidden">
       <CurrentSlide />
 
-      <div className="absolute bottom-6 right-10 text-gray-400 text-sm">
-        {index + 1} / {slides.length}
+      <div className="absolute bottom-6 right-10 text-black-400 text-sm">
+        {index + 1} / {Slides.length}
       </div>
     </div>
   );

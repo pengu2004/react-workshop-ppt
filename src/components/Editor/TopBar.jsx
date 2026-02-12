@@ -2,7 +2,7 @@ import Star from "./Star";
 import Actions from "./Actions";
 import Menu from "./Menu";
 import FileName from "./FileName";
-export default function TopBar({ Present}) {
+export default function TopBar({ Present }) {
   return (
     <div className=" h-14 w-full  flex flex-row  px-4 gap-2 py-2 ">
       <div>
