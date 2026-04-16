@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
-
-export default function SlideEngine({ onExit, index, Slides, changeSlide }) {
+export default function SlideEngine({
+  onExit,
+  index,
+  Slides,
+  changeSlide,
+  CurrentSlide,
+}) {
   const [loading, setloading] = useState(true);
 
   useEffect(() => {
