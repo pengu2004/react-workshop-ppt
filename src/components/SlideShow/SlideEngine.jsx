@@ -1,19 +1,12 @@
 import { useEffect, useState } from "react";
-import EmptySlide from "../EmptySlide";
-import IntroSlide from "../Slides/IntroSlide";
 
-export default function SlideEngine({
-  onExit,
-  index,
-  Slides,
-  CurrentSlide,
-  changeSlide,
-}) {
+export default function SlideEngine({ onExit, index, Slides, changeSlide }) {
   const [loading, setloading] = useState(true);
 
   useEffect(() => {
     if (index === 0) {
       const timer = setTimeout(() => {
+        console.log("loading state updated");
         setloading(false);
       }, 2000);
 
@@ -26,7 +19,6 @@ export default function SlideEngine({
       if (e.key === "ArrowRight") {
         changeSlide(Math.min(index + 1, Slides.length - 1));
       }
-
       if (e.key === "ArrowLeft") {
         changeSlide(Math.max(index - 1, 0));
       }
@@ -45,7 +37,7 @@ export default function SlideEngine({
       window.removeEventListener("keydown", handleKey);
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
     };
-  }, [onExit, Slides.length, changeSlide]);
+  }, [onExit, Slides.length, changeSlide, index]);
 
   if (loading) {
     return (

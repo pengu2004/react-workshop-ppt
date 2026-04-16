@@ -4,11 +4,12 @@ import Editor from "./components/Editor/Editor";
 import SlideEngine from "./components/SlideShow/SlideEngine";
 import IntroSlide from "./components/Slides/IntroSlide";
 import EmptySlide from "./components/EmptySlide";
-import TestSlide from "./components/Slides/TestSlide";
+import TestSlide from "./components/Slides/SPASlide";
+import MicroComponents from "./components/Slides/MicroComponents";
 export function App() {
   const [view, setView] = useState("editor");
   const [index, setIndex] = useState(0);
-  const Slides = [IntroSlide, EmptySlide,TestSlide];
+  const Slides = [IntroSlide, MicroComponents, TestSlide, EmptySlide];
   const CurrentSlide = Slides[index];
 
   return (
